@@ -21,39 +21,38 @@ function generatePassword() {
   var numbers = confirm("Include numbers? Ok for YES Cancel for NO.");
   var specialCharacters = confirm("Include special characters? Ok for YES Cancel for NO.");
   //validate
-  if (passwordLength >= 8 && passwordLength <= 128){
+  if (passwordLength >= 8 && passwordLength <= 128) {
 
-  // password variable
-  var generatedPassword = '';
+    // password variable
+    var generatedPassword = '';
 
-  //filter user input
-  var typesCount = lowerCase + upperCase + numbers + specialCharacters;
-  var typesArray = [{ lowerCase }, { upperCase }, { numbers }, { specialCharacters }].filter(item => Object.values(item)[0]);
+    //filter user input
+    var typesCount = lowerCase + upperCase + numbers + specialCharacters;
+    var typesArray = [{ lowerCase }, { upperCase }, { numbers }, { specialCharacters }].filter(item => Object.values(item)[0]);
 
-  // console.log(typesArray);
+    // console.log(typesArray);
 
-  //loop over length call functions for each type
-  for (i = 0; i < passwordLength; i += typesCount) {
-    typesArray.forEach(type => {
-      var functionName = Object.keys(type)[0];
-      console.log(functionName);
-      if (functionName === 'lowerCase') {
-        generatedPassword += getRandomLowercaseLetter();
-      } else if (functionName === 'upperCase') {
-        generatedPassword += getRandomUppercaseLetter();
-      } else if (functionName === 'numbers') {
-        generatedPassword += getRandomNumeric();
-      } else if (functionName === 'specialCharacters') {
-        generatedPassword += getRandomChar();
-      }
-      // generatedPassword += randomFunction[functionName]();
-    });
-    var finalPassword = generatedPassword.slice(0, passwordLength);
-  }
-  return finalPassword;
-} else if (passwordLength === undefined){
-  return "Please enter a password length!";
-} else return "Please enter a password length between 8 and 128.";
+    //loop over length call functions for each type
+    for (i = 0; i < passwordLength; i += typesCount) {
+      typesArray.forEach(type => {
+        var functionName = Object.keys(type)[0];
+        console.log(functionName);
+        if (functionName === 'lowerCase') {
+          generatedPassword += getRandomLowercaseLetter();
+        } else if (functionName === 'upperCase') {
+          generatedPassword += getRandomUppercaseLetter();
+        } else if (functionName === 'numbers') {
+          generatedPassword += getRandomNumeric();
+        } else if (functionName === 'specialCharacters') {
+          generatedPassword += getRandomChar();
+        }
+        // generatedPassword += randomFunction[functionName]();
+      });
+      var finalPassword = generatedPassword.slice(0, passwordLength);
+    }
+    return finalPassword;
+
+  } else return "Please enter a password length between 8 and 128.";
 
 }
 
