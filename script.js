@@ -20,6 +20,8 @@ function generatePassword() {
   var upperCase = confirm("Include uppercase letters? Ok for YES Cancel for NO.");
   var numbers = confirm("Include numbers? Ok for YES Cancel for NO.");
   var specialCharacters = confirm("Include special characters? Ok for YES Cancel for NO.");
+  //validate
+  if (passwordLength >= 8 && passwordLength <= 128){
 
   // password variable
   var generatedPassword = '';
@@ -49,6 +51,10 @@ function generatePassword() {
     var finalPassword = generatedPassword.slice(0, passwordLength);
   }
   return finalPassword;
+} else if (passwordLength === undefined){
+  return "Please enter a password length!";
+} else return "Please enter a password length between 8 and 128.";
+
 }
 
 //generate random lowercase letter
