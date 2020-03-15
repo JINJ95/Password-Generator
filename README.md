@@ -1,5 +1,5 @@
 
-    ![Password Generator](images/img1.png)
+    <img src="images/img1.jpg">
 
 # Password-Generator
 
@@ -15,13 +15,13 @@
 
 ## Example of password length 9
     
-    ![Length of 9 Example](images/img3.jpg)
+    <img src="images/img3.jpg"> 
 
     I selected a length of 9 and included lowercase, uppercase, numeric, and special characters.
 
 ## If a password length is not between 8 and 128
 
-    ![Password length was not between 8 and 128](images/img2.jpg)
+    <img src="images/img2.jpg">
 
     I selected cancel when prompted to enter a password length. 
     The same output would appear if I was to enter a length less than 8 or greater than 128.
