@@ -36,7 +36,7 @@ function generatePassword() {
     for (i = 0; i < passwordLength; i += typesCount) {
       typesArray.forEach(type => {
         var functionName = Object.keys(type)[0];
-        console.log(functionName);
+        //console.log(functionName);
         if (functionName === 'lowerCase') {
           generatedPassword += getRandomLowercaseLetter();
         } else if (functionName === 'upperCase') {
